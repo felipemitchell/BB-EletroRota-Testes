@@ -1,57 +1,182 @@
-.btn-logout{
-   
-    text-decoration: none;
-    background:#1a73e8 ;    
-    padding: 8px 15px;
-    borderRadius: 5px;
-    cursor: pointer;
-    fontWeight: bold;
-    margin: auto;
-    width: 80px;   
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
-    color: white;
-    border: none;   
-    font-weight: bold;
-    cursor: pointer;
-    
-    
-    }
-    
-    .btn-logout .btn-login :hover { background-color: #1557b0; }
-
-.btn-login{
-     text-decoration: none;
-    background:#1a73e8 ;    
-    padding: 8px 15px;
-    borderRadius: 5px;
-    cursor: pointer;
-    fontWeight: bold;
-    margin: auto;
-    width: 80px;  
-
-    text-decoration: none;
-    width: 80px;;
-    
+:root {
+  --bb-blue: #003882;
+  --bb-blue-dark: #002a63;
+  --bb-yellow: #ffdf00;
+  --bb-white: #ffffff;
+  --bb-font: Arial, sans-serif;
 }
 
-a{
 
-    text-decoration: none;
-    color: white;
-    width: 250px;
+.bb-topbar {
+  background-color: var(--bb-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  /* 15 px 24 px */
+  gap: 16px;
+  font-family: var(--bb-font);
+  height: 80px;
+  /* 0 */
 }
 
-a usuariologado{
-    width: 40px;
-    height: 15px;
-    text-align: end;
-    background: black;
+.bb-logo-area {
+  flex: 1; 
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  align-items: center;
 }
 
-.usuariologado-container{
-    display: flex;
-    width: 60px;
-    height: 15px;
-    text-align: end;
-    background: black;
+.bb-logo-img {
+  height: 45px;
+  width: auto;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.bb-logo-text {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 800; 
+  color: var(--bb-blue) !important;
+  text-decoration: none !important;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+
+.bb-topnav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  justify-content: center;
+  flex: 0;
+  white-space: nowrap;
+}
+
+.bb-topnav a {
+  color: var(--bb-blue);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700; 
+  padding: 5px 0;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.bb-topnav a:hover {
+  background-color: rgba(0, 56, 130, 0.1);
+}
+
+/* Grupo Direito: Busca + Botão */
+.bb-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+  justify-content: center;
+  flex: '';
+}
+
+.bb-search-form {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  width: 250px;
+  background: transparent; 
+  border: 1px solid var(--bb-blue); 
+  border-radius: 10px;
+  padding: 0 15px;
+  flex-direction: row; 
+  box-sizing: border-box;
+}
+
+.bb-search-input {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: var(--bb-blue-dark);
+  font-size: 0.8rem;
+  width: 100%;
+  padding-left: 8px;
+  box-shadow: none;
+  height: 100%;
+  /* -webkit-appearance: none; */
+}
+
+.bb-search-lupa {
+  background: transparent !important;
+  border: none !important;
+  color: var(--bb-blue);
+  cursor: pointer;
+  font-size: 0.9rem;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botão de Conta Sólido Azul */
+.bb-account-btn {
+  background-color: var(--bb-blue);
+  color: var(--bb-white) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.bb-account-btn:hover {
+  background-color: var(--bb-blue-dark);
+}
+
+.bb-user-logged {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 10px;
+}
+
+.bb-user-name {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--bb-blue); /* Azul oficial */
+  font-weight: 500;
+  cursor: default;
+  white-space: nowrap;
+  top: -1px;
+}
+
+.bb-logout-btn { 
+  background-color: var(--bb-blue);
+  color: var(--bb-white);
+  border: none;
+  padding: 0px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -5px;
+  width: 67px;
+}
+  
+.bb-logout-btn:hover {
+  background-color: #002b63;
 }
