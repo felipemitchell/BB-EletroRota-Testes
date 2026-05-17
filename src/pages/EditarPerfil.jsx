@@ -54,7 +54,8 @@ export default function EditarPerfil({ usuario, setUsuario }) {
 
   // Função para EXCLUIR conta
   const handleDelete = async () => {
-    if (!window.confirm('TEM CERTEZA? Isso excluirá sua conta permanentemente.')) return;
+    if (!window.confirm('TEM CERTEZA? Isso excluirá sua conta permanentemente.')) 
+      return;
 
     try {
       const response = await fetch(`https://69fea0e78c70b15fa3ca9803.mockapi.io/usuarios/usuarios/${usuario.id}`, {
