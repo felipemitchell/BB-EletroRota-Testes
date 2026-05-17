@@ -81,7 +81,7 @@ export default function EditarPerfil({ usuario, setUsuario }) {
         {/* Lado Esquerdo: Imagem */}
         <div style={imageSectionStyle}>
           <img src={imagemCarro} alt="Carro Elétrico" style={imageStyle} />
-          <h3 style={{ color: '#2c3e50', marginTop: '20px' }}>Meu bbEletroRota</h3>
+          <h3 style={{ color: '#2c3e50', marginTop: '20px' }}>Meu BB EletroRota</h3>
         </div>
 
         {/* Lado Direito: Informações e Formulário */}

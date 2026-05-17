@@ -1,57 +1,78 @@
-.btn-logout{
-   
-    text-decoration: none;
-    background:#1a73e8 ;    
-    padding: 8px 15px;
-    borderRadius: 5px;
-    cursor: pointer;
-    fontWeight: bold;
-    margin: auto;
-    width: 80px;   
 
-    color: white;
-    border: none;   
-    font-weight: bold;
-    cursor: pointer;
-    
-    
-    }
-    
-    .btn-logout .btn-login :hover { background-color: #1557b0; }
 
-.btn-login{
-     text-decoration: none;
-    background:#1a73e8 ;    
-    padding: 8px 15px;
-    borderRadius: 5px;
-    cursor: pointer;
-    fontWeight: bold;
-    margin: auto;
-    width: 80px;  
+/* navbar.css */
 
-    text-decoration: none;
-    width: 80px;;
-    
-}
+.navbar {
+    padding: 15px 30px;
+    background: #ffdf00;
+    color: #2116b8;
 
-a{
-
-    text-decoration: none;
-    color: white;
-    width: 250px;
-}
-
-a usuariologado{
-    width: 40px;
-    height: 15px;
-    text-align: end;
-    background: black;
-}
-
-.usuariologado-container{
     display: flex;
-    width: 60px;
-    height: 15px;
-    text-align: end;
-    background: black;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    min-height: 60px;
+    box-sizing: border-box;
 }
+
+.logo {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #2116b8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.usuarioLogado-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.usuarioLogado {
+    color: #2116b8;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.btn-login,
+.btn-logout {
+    background: #1a73e8;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 8px 15px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-login:hover,
+.btn-logout:hover {
+    background: #1557b0;
+}
+
+
