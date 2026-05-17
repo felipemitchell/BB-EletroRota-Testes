@@ -37,10 +37,6 @@ export default function Home({ usuario, setUsuario }) {
         />
       </div>
 
-
-      {/* <h1>Deslogado</h1> */}
-
-
       <section className="cards">
 
         <a className="card" id="estacoes" >

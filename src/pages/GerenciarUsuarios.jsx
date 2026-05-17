@@ -10,12 +10,10 @@ export default function GerenciarUsuarios() {
     potencia: '',
     bateriaAtual: ''
   });
+  
   const [editId, setEditId] = useState(null);
   const [mensagem, setMensagem] = useState('');
-
-  //const API_URL = 'http://localhost:3000/usuarios';
   const API_URL = 'https://69fea0e78c70b15fa3ca9803.mockapi.io/usuarios/usuarios';
-   
 
   useEffect(() => {
     carregarUsuarios();
@@ -135,7 +133,7 @@ export default function GerenciarUsuarios() {
 
 
     <div style={{ padding: '20px', maxWidth: '800px', margin: 'auto' }}>
-   
+
 
       <h2>Gerenciamento de Usuários e Veículos</h2>
 
@@ -144,7 +142,7 @@ export default function GerenciarUsuarios() {
         <input name="nome" value={formData.nome} onChange={handleChange} placeholder="Nome" required />
         <input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="E-mail" required />
         <input name="senha" type="password" value={formData.senha} onChange={handleChange} placeholder="Senha" required />
-        
+
         <label style={{ marginTop: '10px', fontWeight: 'bold' }}>Dados do Veículo:</label>
         <input name="marca" value={formData.marca} onChange={handleChange} placeholder="Marca (ex: Tesla, Chevrolet)" required />
         <input name="potencia" value={formData.potencia} onChange={handleChange} placeholder="Potência (ex: 200 kW)" required />
