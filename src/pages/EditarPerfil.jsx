@@ -35,7 +35,7 @@ export default function EditarPerfil({ usuario, setUsuario }) {
     };
 
     try {
-      const response = await fetch(`https://69fea0e78c70b15fa3ca9803.mockapi.io/usuarios/usuarios/${usuario.id}`, {
+        const response = await fetch(`https://69fea0e78c70b15fa3ca9803.mockapi.io/usuarios/usuarios/${usuario.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(usuarioAtualizado)

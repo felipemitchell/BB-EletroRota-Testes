@@ -4,7 +4,6 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import './Home.css';
 import imagemCarro from '../assets/imagemCarro.png';
-//import img-gps1 from '../assets/img-gps1';
 import imagemgps from '../assets/imagemgps.png';
 
 
