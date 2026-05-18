@@ -282,7 +282,6 @@
   .bb-topbar-right .bb-account-btn,
   .bb-topbar-right .bb-logout-btn {
     position: absolute;
-    top: 14px;
     right: 16px;
     width: auto;
     padding: 0 14px;
@@ -292,6 +291,9 @@
     justify-content: center;
     gap: 6px;
   }
+
+  .bb-topbar-right .bb-account-btn {top: 17px;}
+  .bb-topbar-right .bb-logout-btn {top: 8px;}
 
   .bb-logo-img {
     height: 48px;  
