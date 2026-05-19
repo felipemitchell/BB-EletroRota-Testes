@@ -14,6 +14,11 @@
   margin: 0;
   padding: 0;
   line-height: 1;
+  display: block;
+}
+
+.bb-header + * {
+  margin-top: 0;
 }
 
 .bb-topbar {
@@ -26,23 +31,11 @@
   box-sizing: border-box;
 }
 
-.bb-logo-area,
-.bb-topnav,
-.bb-topbar-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
 
 .bb-logo-area {
   justify-content: flex-start;
   gap: 10px;
   line-height: 1;
-}
-
-.bb-topnav {
-  gap: 23px;
-  justify-content: center;
 }
 
 .bb-logo-img {
@@ -66,12 +59,18 @@
   align-items: center;
 }
 
+.bb-topnav {
+  gap: 23px;
+  justify-content: center;
+}
+
 .bb-topnav a {
   color: var(--bb-blue);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
   padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
   transition: color 0.2s, border-bottom 0.2s;
   white-space: nowrap;
 }
@@ -79,6 +78,14 @@
 .bb-topnav a:hover {
   color: var(--bb-blue);
   border-bottom: 2px solid var(--bb-blue);
+}
+
+.bb-logo-area,
+.bb-topnav,
+.bb-topbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* Grupo Direito */
@@ -108,7 +115,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .bb-search-input {
@@ -120,7 +127,7 @@
   width: 120px;
   flex: 1 1 0;
   min-width: 0;
-  text-align: center; 
+  text-align: flex-start; 
 }
 
 .bb-search-input::placeholder {
@@ -138,11 +145,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 14px;
+  padding: 0 12px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   white-space: nowrap;
   height: 36px;
   cursor: pointer;
@@ -183,7 +190,7 @@
   align-items: center;
   justify-content: center;
   position: relative; 
-  top: -4px;
+  top: -5px;
   flex-shrink: 0;
   width: auto;
 }
@@ -196,7 +203,10 @@
 .acessar-mobile { display: none; }
 .acessar-desktop { display: inline; }
 
-/* ── NOTEBOOKS ── */
+
+/*---------------- Resposividade ------------------ */
+
+/* NOTEBOOKS */
 @media (max-width: 1366px) and (min-width: 861px) {
   .bb-topbar { padding: 0 24px; gap: 12px; }
   .bb-topnav { gap: 16px; }
@@ -205,7 +215,7 @@
   .bb-logo-text { font-size: 1.1rem; }
 }
 
-/* ── TABLET E MOBILE ── */
+/* TABLET E MOBILE */
 @media (max-width: 860px) {
 
   .bb-topbar {
@@ -226,7 +236,10 @@
     padding-right: 80px;
     padding-left: 0;
   }
-
+  
+  .bb-logo-img {
+    height: 48px;  
+  }
   .bb-logo-text,
   .bb-logo-yellow {
   font-size: 1.10rem !important;
@@ -267,7 +280,6 @@
     width: 100%;
     border-radius: 20px;
     height: 34px;
-    justify-content: flex-start;
   }
 
   /* Nome centralizado */
@@ -295,16 +307,13 @@
   .bb-topbar-right .bb-account-btn {top: 17px;}
   .bb-topbar-right .bb-logout-btn {top: 8px;}
 
-  .bb-logo-img {
-    height: 48px;  
-  }
 
   /* Mobile: esconde texto longo, mostra "Login" */
   .acessar-desktop { display: none; }
   .acessar-mobile { display: inline; }
 }
 
-/* ── MOBILE PEQUENO ── */
+/* MOBILE PEQUENO */
 @media (max-width: 480px) {
   .bb-topbar { padding: 10px 12px; }
   .bb-logo-text, .bb-logo-yellow { font-size: 0.95rem; }
