@@ -1,32 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import LogoImg from '../assets/LogoEletroRota.png';
+import BarraBusca from './Busca';
 import './Navbar.css';
 
-function BarraBusca() {
-  const navigate = useNavigate();
-  const [busca, setBusca] = useState('');
-
-  const handleBusca = (e) => {
-    e.preventDefault();
-    if (busca.trim()) navigate(`/busca?q=${busca}`);
-  };
-
-  return (
-    <form className="bb-search-form" onSubmit={handleBusca}>
-      <div className="bb-search-inner">
-        <i className="fas fa-search"></i>
-        <input
-          type="text"
-          className="bb-search-input"
-          placeholder="Busque no site"
-          value={busca}
-          onChange={(e) => setBusca(e.target.value)}
-        />
-      </div>
-    </form>
-  );
-}
 
 function BotaoLogin() {
   return (
