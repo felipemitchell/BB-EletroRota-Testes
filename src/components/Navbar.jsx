@@ -1,7 +1,32 @@
-
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import LogoImg from '../assets/LogoEletroRota.png';
+import BarraBusca from './Busca';
 import './Navbar.css';
 
+
+function BotaoLogin() {
+  return (
+    <Link to="/login" className="bb-account-btn">
+      <i className="fas fa-user"></i>
+      <span className='acessar-desktop'>Acessar a sua conta</span>
+      <span className='acessar-mobile'>Login</span>
+    </Link>
+  );
+}
+
+function UsuarioLogado({ usuario, onLogout }) {
+  return (
+    <>
+      <Link className="bb-user-name" to="/editarPerfil">
+        Bem vindo, <strong className="usuario">{usuario.nome}</strong>
+      </Link>
+      <button className="bb-logout-btn" onClick={onLogout}>
+        Sair
+      </button>
+    </>
+  );
+}
 
 export default function Navbar({ usuario, setUsuario }) {
   const navigate = useNavigate();
@@ -9,69 +34,34 @@ export default function Navbar({ usuario, setUsuario }) {
   const handleLogout = () => {
     localStorage.removeItem('usuarioLogado');
     setUsuario(null);
-    navigate('/home', { replace: true });
+    navigate('/', { replace: true });
   };
 
-
   return (
+    <header className="bb-header">
+      <div className="bb-topbar">
 
+        <div className="bb-logo-area">
+          <img src={LogoImg} alt="Logo BB EletroRota" className="bb-logo-img" />
+          <span className="bb-logo-text">BB</span>
+          <span className="bb-logo-yellow">EletroRota</span>
+        </div>
 
-// Navbar.jsx
+        <nav className="bb-topnav">
+          <Link to="/">Início</Link>
+          <Link to="/gerenciar">Gerenciar Usuários</Link>
+          <Link to="/mapas">Mapas</Link>
+        </nav>
 
-
-    <nav className="navbar">
-
-      <h1 className="logo">BB EletroRota</h1>
-
-      <ul className="nav-links">
-        <li>
-          <Link to="/" className="nav-link">
-            Início
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/gerenciar" className="nav-link">
-            Gerenciar Usuários
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/mapas" className="nav-link">
-            Mapas
-          </Link>
-        </li>
-      </ul>
-
-      <div className="usuarioLogado-container">
-
-        {usuario ? (
-          <>
-            <Link
-              to="/editarPerfil"
-              className="usuarioLogado"
-            >
-              Bem vindo, <strong>{usuario.nome}</strong>
-            </Link>
-
-            <button
-              onClick={handleLogout}
-              className="btn-logout"
-            >
-              Sair
-            </button>
-          </>
-        ) : (
-          <Link
-            to="/login"
-            className="btn-login"
-          >
-            Login
-          </Link>
-        )}
+        <div className="bb-topbar-right">
+          <BarraBusca />
+          {usuario
+            ? <UsuarioLogado usuario={usuario} onLogout={handleLogout} />
+            : <BotaoLogin />
+          }
+        </div>
 
       </div>
-
-    </nav>
+    </header>
   );
 }
